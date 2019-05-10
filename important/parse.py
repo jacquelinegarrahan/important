@@ -118,7 +118,7 @@ def parse_dir_imports(current_directory, exclusions=None):
 
 def parse_requirements(filename):
     requirements = pip_parse_requirements(filename,
-                                          session=pip.download.PipSession())
+                                          session=pip._internal.download.PipSession())
     for requirement in requirements:
         if not requirement.name:
             raise ValueError(
