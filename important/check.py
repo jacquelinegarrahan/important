@@ -8,7 +8,10 @@ from important.parse import translate_req_to_module_names
 
 
 def _base_module_name(import_statement):
-    return import_statement.module.split('.')[0]
+    try:
+        return import_statement.module.split('.')[0]
+    except:
+        return
 
 
 def check_unused_requirements(imports, requirements):
