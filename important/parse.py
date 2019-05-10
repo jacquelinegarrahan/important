@@ -17,9 +17,9 @@ from itertools import chain
 
 import pip
 
-from pip.commands.show import search_packages_info
-from pip.req import parse_requirements as pip_parse_requirements
-
+from pip._internal.commands.show import search_packages_info
+from pip._internal.req import parse_requirements as pip_parse_requirements
+pip._internal.download.PipSession()
 
 RE_SHEBANG = re.compile('^#![^\n]*python[0-9]?$')
 ALL_MODULES = set(
